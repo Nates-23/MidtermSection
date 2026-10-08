@@ -2,56 +2,56 @@
 import { ref } from 'vue'
 
 const dean = ref({
-  photo: '/src/assets/Dean.png', 
+  photo: '/src/assets/dean.png', 
   name: 'Ma. Christina A. Quijano, MSCS', 
   role: 'Dean, College of Computer Studies'
 })
 const facultyMembers = ref([
 
   {
-    photo: '/src/assets/Rea.jpg',
+    photo: '/src/assets/rea.jpg',
     name: 'Rea P. Balontong, MBA',
     role: 'Department Head (IT & IS)'
   },
 
   {
-    photo: '/src/assets/Rose.jpg',
+    photo: '/src/assets/rose.jpg',
     name: 'Marjee Rose B. Parreño, MSCS, MBA',
     role: 'Program coordinator (BSCS, BSDMIA, and MSCS)'
   },
 
   {
-    photo: '/src/assets/Mae.jpg',
+    photo: '/src/assets/mae.jpg',
     name: 'Ana Mae B. Cantel. MLIS',
     role: 'Program Coordinator (BLIS and MLIS)'
   },
  
   {
-    photo: '/src/assets/Pajar.jpg', 
+    photo: '/src/assets/pajar.jpg', 
     name: 'Lennon D. Pajar',
     role: 'Computer Laboratory Coordinator'
   },
 
   {
-    photo: '/src/assets/Beldia.jpg', 
+    photo: '/src/assets/beldia.jpg', 
     name: 'Leo Paulo B. Beldia',
     role: 'BSIT and BSIS Program'
   },
 
   {
-    photo: '/src/assets/Eregia.jpg', 
+    photo: '/src/assets/eregia.jpg', 
     name: 'Rodolfo C. Eregia, Jr.',
     role: 'BSIT and BSIS Program'
   },
 
   {
-    photo: '/src/assets/Antonio.jpg', 
+    photo: '/src/assets/antonio.jpg', 
     name: 'Antonio M. Montaño, Jr.',
     role: 'BSIT and BSIS Program'
   },
   
   {
-    photo: '/src/assets/Sapul.jpg', 
+    photo: '/src/assets/sapul.jpg', 
     name: 'Ma. Sheila C. Sapul, Ph. D.',
     role: 'BSCS Program'
   }
