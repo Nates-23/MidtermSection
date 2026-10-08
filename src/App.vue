@@ -6,4 +6,12 @@ import MainLayout from '@/layouts/MainLayout.vue'
   <MainLayout />
 </template>
 
-<style scoped></style>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 80px;
+}
+</style>

@@ -1,244 +1,189 @@
+<script setup>
+import { ref } from 'vue'
+
+
+const ccsLogo = ref('/src/assets/CCSLogo.png')
+const fallbackLogo = '/src/assets/CPU_UNIV_LOGO.png'
+
+const onLogoError = (e) => {
+  if (e.target.src !== fallbackLogo) {
+    e.target.src = fallbackLogo
+  }
+}
+</script>
+
 <template>
-    <Navbar />
-    <body>
-        <main id="main-container">
-            <section id="main-content-container">
-                <section id="left-content-container" class="main-contents">
-                    <p id="left-quote">ESTABLISHED 1905</p>
-                    <h1 class="left-titles">Exemplary Way of</h1>
-                    <h1 class="left-titles">Education for Life.</h1>
-                    <p id="paragraph">A leading Christian institutions in the Philippines, Borgs<br> University
-                        nurture intellectual growth and spiritual<br> development through a commitment to<br>
-                        Knowledge Drives a Brighter Tomorrow</br></p>
-                        
-                    <section id="buttons-container">
-                        <button id="colored-btn" class="content-btn">Explore Academics</button>
-                        <button id="second-btn" class="content-btn">Request Information</button>
-                    </section>
+  <div id="hero" class="hero-wrapper">
+    <main id="main-container">
+      <section id="main-content-container">
 
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <h3>118+</h3>
-                            <p>Years of Excellence</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>20+</h3>
-                            <p>Academic Programs</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>5,000+</h3>
-                            <p>Active Students</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>20+</h3>
-                            <p>Partner Institutions</p>
-                        </div>
-                    </div>
-                </section>
+        <section id="left-content-container" class="main-contents">
+          <p id="left-quote">ESTABLISHED 1905 • COLLEGE OF COMPUTER STUDIES</p>
+          <h1 class="left-titles">College of Computer Studies</h1>
+          <p id="paragraph">
+            The College of Computer Studies nurtures intellectual growth, technological innovation, and spiritual development through industry-driven computing education. Knowledge Drives a Brighter Tomorrow.
+          </p>
 
-                <section id="right-content-container" class="main-contents">
-                    <section id="right-contents">
-                        <section id="right-image-container" class="right-sub-containers">
-                            <img id="right-image" src="/src/assets/CPU_UNIV_LOGO.png" alt="CPU LOGO" width="100">
-                        </section>
-                        <section id="right-title-container" class="right-sub-containers">
-                            <h1 id="main-school-name">Borgs <br>University</br></h1>
-                            <p id="right-quote">Knowledge Drives a Brighter Tomorrow</p>
-                        </section>
-                        <div id="line-design"></div>
-                        <section id="right-quote-container" class="right-sub-containers">
-                            <p id="bottom-quote">"A Heritage of Excellence, <br>A Future of Faith"</p>
-                        </section>
-                    </section>
-                </section>
+          <section id="buttons-container">
+            <a href="#programs" id="colored-btn" class="content-btn">Explore Programs</a>
+            <a href="#faculty" id="second-btn" class="content-btn">Meet Faculty</a>
+          </section>
+
+          <div class="stats-container">
+            <div class="stat-item">
+              <h3>118+</h3>
+              <p>Years of Excellence</p>
+            </div>
+            <div class="stat-item">
+              <h3>4</h3>
+              <p>Degree Programs</p>
+            </div>
+            <div class="stat-item">
+              <h3>1,200+</h3>
+              <p>Active Students</p>
+            </div>
+            <div class="stat-item">
+              <h3>20+</h3>
+              <p>Partner Institutions</p>
+            </div>
+          </div>
+        </section>
+
+
+        <section id="right-content-container" class="main-contents">
+          <section id="right-contents">
+            <section id="right-image-container" class="right-sub-containers">
+              <img
+                id="right-image"
+                :src="ccsLogo || fallbackLogo"
+                alt="College of Computer Studies Logo"
+                width="100"
+                @error="onLogoError"
+              />
             </section>
-        </main>
-    </body>
+            <section id="right-title-container" class="right-sub-containers">
+              <h1 id="main-school-name">College of<br />Computer Studies</h1>
+              <p id="right-quote">the CCS core practices that build bridges between gaps</p>
+            </section>
+            <div id="line-design"></div>
+            <section id="right-quote-container" class="right-sub-containers">
+              <p id="bottom-quote">different PEOPLE, ONE goal</p>
+            </section>
+          </section>
+        </section>
+      </section>
+    </main>
+  </div>
 </template>
 
 <style scoped>
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-body {
-    width: 100%;
-    height: 50vh;
-}
-
-#header-container {
-    width: 100%;
-    height: 20%;
-}
-
-#header-contents-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.hero-wrapper {
+  width: 100%;
 }
 
 #main-container {
-    width: 100%;
-    min-height: 50vh;
-    padding: 0 2rem;
-    overflow: hidden;
-
-
+  width: 100%;
+  min-height: 50vh;
+  padding: 1.5rem 2rem 2.5rem 2rem;
+  overflow: hidden;
 }
 
 #main-content-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-contents {
-    width: 50%;
-    height: 100%;
+  width: 50%;
+  height: 100%;
 }
 
 #left-content-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    padding-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 2rem;
 }
 
 #left-quote {
-    color: hsl(51, 78%, 43%);
-    text-shadow: 0 0 1px hsl(0, 0%, 0%);
-    font-size: 20px;
-    font-family:'Gill Sans MT';
+  color: hsl(51, 78%, 43%);
+  text-shadow: 0 0 1px hsl(0, 0%, 0%);
+  font-size: 18px;
+  font-family: 'Gill Sans MT', sans-serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
 }
 
 .left-titles {
-    font-size: 2.5rem;
-    color: hsl(276, 100%, 21%);
-    text-shadow: 0 0 1px hsl(0, 0%, 0%);
-    font-size: 80px;
+  color: hsl(276, 100%, 21%);
+  text-shadow: 0 0 1px hsl(0, 0%, 0%);
+  font-size: 68px;
+  line-height: 1.1;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
 }
 
 #paragraph {
-    color: hsl(0, 0%, 31%);
-    padding-top: 1rem;
-    font-size: 25px;
-    font-family: 'Gill Sans MT';
+  color: hsl(0, 0%, 31%);
+  padding-top: 1rem;
+  font-size: 20px;
+  line-height: 1.5;
+  font-family: 'Gill Sans MT', sans-serif;
+  max-width: 560px;
 }
 
 #buttons-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 1.5rem;
+  gap: 12px;
 }
 
 .content-btn {
-    width: 300px;
-    height: 50px;
-    margin-right: 10px;
-    color: hsl(276, 100%, 21%);
-    font-size: 17px;
-    font-weight: bold;
-    border-radius: 8px;
+  width: 220px;
+  height: 50px;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-#second-btn {
-    border: 2px solid hsl(0, 0%, 52%);
-    background-color: hsl(0, 0%, 100%);
+.content-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
 }
 
 #colored-btn {
-    color: hsl(0, 0%, 100%);
-    background-color: hsl(276, 100%, 21%)
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(276, 100%, 21%);
+  border: 2px solid hsl(276, 100%, 21%);
+  box-shadow: 0 4px 10px rgba(56, 0, 107, 0.2);
 }
 
-#right-content-container {
-    padding: 1rem 2rem 1rem 10rem;
+#second-btn {
+  border: 2px solid hsl(0, 0%, 52%);
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(276, 100%, 21%);
 }
 
-#right-contents { 
-  width: 100%; 
-  height: 100%; 
-  border-radius: 20px; 
-  background: linear-gradient(135deg, gold 20%, white 60%); 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
+#second-btn:hover {
+  border-color: hsl(276, 100%, 21%);
+  background-color: #faf5ff;
 }
-
-#line-design {
-    width: 100px;
-}
-
-.right-sub-containers {
-    width: 100%;
-}
-
-#right-image-container {
-    height: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#right-image {
-    width: 20%;
-}
-
-#right-title-container {
-    height: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 2rem;
-    font-size: 20px;
-    color: hsl(51, 78%, 43%);
-
-}
-
-#right-quote-container {
-    height: 18%;
-    
-}
-
-#main-school-name {
-    color: hsl(276, 100%, 21%);
-    text-shadow: 0 0 1px hsl(0, 0%, 0%);
-    font-size: 40px;
-}
-
-#right-quote-container {
-    text-align: center;
-    padding-top: 1.2rem;
-    font-style: italic;
-    color: hsl(0, 0%, 0%);
-    font-family: arial;
-    font-size: 20px;
-
-}
-#right-contents { 
-  width: 100%; 
-  height: 100%; 
-  border-radius: 20px; 
-  background: linear-gradient(135deg, gold 20%, white 60%); 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
-}
-
 
 .stats-container {
   display: flex;
@@ -271,13 +216,120 @@ body {
 .stat-item h3 {
   font-size: 24px;
   font-weight: bold;
-  color: #1a0dab;
+  color: hsl(276, 100%, 21%);
   margin: 0 0 4px 0;
 }
 
 .stat-item p {
   font-size: 12px;
-  color: #5f6368; 
+  color: #5f6368;
   margin: 0;
+}
+
+#right-content-container {
+  padding: 1rem 2rem 1rem 6rem;
+}
+
+#right-contents {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  min-height: 400px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, gold 20%, white 60%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+}
+
+.right-sub-containers {
+  width: 100%;
+}
+
+#right-image-container {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+#right-image {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+#right-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+#main-school-name {
+  color: hsl(276, 100%, 21%);
+  text-shadow: 0 0 1px hsl(0, 0%, 0%);
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+#right-quote {
+  font-size: 16px;
+  color: hsl(51, 78%, 36%);
+  font-weight: 600;
+  font-family: 'Gill Sans MT', sans-serif;
+}
+
+#line-design {
+  width: 80px;
+  height: 3px;
+  background-color: hsl(276, 100%, 21%);
+  margin: 1.25rem 0;
+  border-radius: 2px;
+}
+
+#right-quote-container {
+  text-align: center;
+  font-style: italic;
+  color: hsl(0, 0%, 0%);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+#bottom-quote {
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  #main-content-container {
+    flex-direction: column;
+  }
+  .main-contents {
+    width: 100%;
+  }
+  #left-content-container {
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+  .left-titles {
+    font-size: 48px;
+  }
+  #buttons-container {
+    justify-content: center;
+  }
+  #right-content-container {
+    padding: 2.5rem 0;
+  }
 }
 </style>
